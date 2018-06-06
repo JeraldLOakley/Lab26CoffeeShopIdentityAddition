@@ -1,0 +1,28 @@
+﻿@using Lab26.Models;
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Cart</h2>
+
+
+   
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Stock</th>
+        <th>Price</th>
+    </tr>
+
+    @foreach (Item i in (List<Item>)(Session["Cart"]))
+    {
+        <tr>
+            <td>@i.Name</td>
+            <td>@i.Description</td>
+            <td>@i.Stock</td>
+            <td>@i.Price</td>
+        </tr>
+    }
+</table>
+   

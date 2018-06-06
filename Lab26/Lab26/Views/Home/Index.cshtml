@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to GC Coffee</h1>
+</div>
+<table>
+    <tr>
+        <th class="col-sm-3">Coffee </th>
+        <th class="col-sm-3">Description </th>
+        <th class="col-sm-3">In Stock </th>
+        <th class="col-sm-3">Price Per 1 lb. Bag</th>
+    </tr>
+    @foreach (Lab26.Models.Item item in ViewBag.Items)
+    {
+        <tr>
+            <td class="col-sm-3"> @item.Name</td>
+            <td class="col-sm-3"> @item.Description</td>
+            <td class="col-sm-3"> @item.Stock</td>
+            <td class="col-sm-3"> @item.Price</td>
+        </tr>
+    }
+</table>

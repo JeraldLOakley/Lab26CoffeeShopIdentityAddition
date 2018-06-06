@@ -1,0 +1,31 @@
+﻿
+@using Lab26.Models;
+@{
+    ViewBag.Title = "Menu";
+}
+
+<h2>Menu</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th><a href="~/Items/MenuSorted?column=Name">Name</a></th>
+        <th><a href="~/Items/MenuSorted?column=Description">Description</a></th>
+        <th><a href="~/Items/MenuSorted?column=Stock">Stock</a></th>
+        <th><a href="~/Items/MenuSorted?column=Price">Price</a></th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (Item i in ViewBag.Items)
+    {
+        <tr>
+            <td>@i.Name</td>
+            <td>@i.Description</td>
+            <td>@i.Stock</td>
+            <td>@i.Price</td>
+            <td>
+                <a href="~/Home/Add?id=@i.ID"
+                   class="btn btn-danger">Add to Cart</a>
+            </td>
+        </tr>
+    }
+</table>
